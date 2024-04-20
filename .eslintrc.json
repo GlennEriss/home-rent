@@ -1,3 +1,20 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "eqeqeq": "error",
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "no-var": "error",
+    "prefer-const": "error",
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "indent": ["error", 2],
+    "curly": "error",
+    "no-console": "warn",
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "no-duplicate-imports": "error",
+    "prefer-template": "error"
+  }
 }
