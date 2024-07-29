@@ -1,8 +1,68 @@
 {
     "Home": {
         "Metadata": {
-            "title": "Home-Rent|Page d'acceuil",
-            "description": "Page d'accueil d'Home-Rent"
+            "title": "Home-Finder|Page d'acceuil",
+            "description": "Page d'accueil d'Home-Finder"
         }
+    },
+    "InfoComponent": {
+        "welcome": "BIENVENUE SUR HOME-FINDER",
+        "invest": "Votre Prochaine Aventure Immobilière Commence Ici!",
+        "description": "Trouvez la maison de vos rêves ou louez votre propriété sans effort sur HomeFinder, la plateforme de location immobilière qui simplifie la recherche de logement au Gabon.",
+        "catalog": "Catalogues",
+        "create": "Créer une annonce"
+    },
+    "SearchProperty": {
+        "title": "Rechercher une propriété",
+        "search": "Rechercher",
+        "sellOrRent": "À vendre ou à louer",
+        "type": "Type de propriétés",
+        "sell": "À vendre",
+        "rent": "À louer",
+        "studio": "Studio",
+        "house": "Maison",
+        "appartment": "Appartement",
+        "building": "Immeuble",
+        "villa": "Villa",
+        "local": "Local",
+        "desk": "Bureau",
+        "ground": "Terrain",
+        "bedroom": "Chambres",
+        "province": "Sélectionner une province",
+        "city": "Sélectionner une ville"
+    },
+    "PropertyTypes": {
+        "title": "Explorez les types d'appartement",
+        "home": "Maison",
+        "apartment": "Appartement",
+        "studio": "Studio",
+        "land": "Terrain",
+        "property": "{number} propriété(s)"
+    },
+    "PropertyList": {
+        "title": "Propriétés à la une",
+        "showMore": "Voir +"
+    },
+    "CardProperty": {
+        "rent": "A louer",
+        "sell": "A vendre",
+        "bedroom": "{size} Chambres",
+        "bathroom": "{size} Toilettes",
+        "kitchen": "{size} Cuisines",
+        "living": "{size} Salons",
+        "garage": "{size} Garages",
+        "terrace": "{size} Terrasses",
+        "barrier": "Avec barrière",
+        "swim": "Avec Piscine",
+        "price": "FCFA {value}",
+        "details": "Voir en détails",
+        "localisation": "{city}, {province}, {country}"
+    },
+    "PropertyByProvince": {
+        "title": "Propriétés par province"
+    },
+    "ProvinceItem": {
+        "province": "{title}",
+        "property": "{number} Propriétés"
     }
 }

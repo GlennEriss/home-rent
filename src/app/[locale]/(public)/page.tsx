@@ -1,5 +1,6 @@
 import React from 'react'
 import {getTranslations} from 'next-intl/server'
+import HomeComponent from '@/components/home/HomeComponent'
  
 export async function generateMetadata({params: {locale}}:{params: {locale: string}}) {
   const t = await getTranslations({locale, namespace: 'Home'})
@@ -12,7 +13,7 @@ export async function generateMetadata({params: {locale}}:{params: {locale: stri
 export default function page() {
   return (
     <div>
-      aaa
+      <HomeComponent/>
     </div>
   )
 }
