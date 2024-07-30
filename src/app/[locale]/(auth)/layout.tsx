@@ -8,7 +8,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
                 <div style={{ display: 'flex', width: '80%', height: '80%', boxShadow: '4px 8px 10px rgba(0, 0, 0, 0.1)' }}>
                     <center style={{ flex: 1, padding: '2rem', backgroundColor: '#EC7D3A', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         <h2 style={{ margin: '0 0 1rem', color: '#1f2937', fontSize: '2rem', fontWeight: 'bold' }}>Il n'y a pas de meilleur endroit que chez soi.</h2>
-                        <img src="/logo-light.svg" alt="Illustration" style={{ width: '100%' }} />
+                        <img src="/graphic3.svg" alt="Illustration" width={"60%"}/>
                     </center>
                     <div style={{ flex: 1, padding: '2rem', backgroundColor: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                         {children}
