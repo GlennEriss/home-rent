@@ -3,7 +3,7 @@ import React from 'react'
 export default function layout({ children }: { children: React.ReactNode }) {
     return (
         <body style={{ overflowX: 'hidden', overflowY: 'hidden' }}>
-            <img src="/assets/estuaire.webp" alt="" width="100%" height="100%" style={{ position: 'absolute', zIndex: -1 }} />
+            <img src="/assets/estuaire.webp" alt="" width="100%" height="200%" style={{ position: 'absolute', zIndex: -1 }} />
             <div style={{ margin: 0, fontFamily: 'Arial, sans-serif', display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ display: 'flex', width: '80%', height: '80%', boxShadow: '4px 8px 10px rgba(0, 0, 0, 0.1)' }}>
                     <center style={{ flex: 1, padding: '2rem', backgroundColor: '#EC7D3A', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
