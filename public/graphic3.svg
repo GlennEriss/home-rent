@@ -1,6 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 890.649 841.993">
     <defs>
-        <style>.cls-1,.cls-3,.cls-4{fill:#1F2937}.cls-1{opacity:.17}.cls-2{fill:#ddd6ff}.cls-14,.cls-3{opacity:.18}.cls-6{fill:#2F3D7F}.cls-7{fill:#fff}.cls-12{fill:#c4b9ff}.cls-13{fill:#2F3D7F}.cls-15{fill:#3f327a}.cls-16{fill:#f7d3a9}.cls-17{fill:#EC7D3A}.cls-18{fill:#353e70}.cls-19{fill:#d69e43}.cls-21{fill:#2c2656}.cls-23{fill:#ce6c5f}.cls-24{fill:#453c87}.cls-25{fill:#dba246}.cls-26{fill:#d3ab84}.cls-28{fill:#232049}.cls-32{fill:rgba(255,255,255,.18)}.cls-34{fill:#58bb85}.cls-37{fill:#ffd052}.cls-39{fill:rgba(255,255,255,.44)}.cls-41{fill:rgba(255,255,255,.29)}.cls-42{fill:rgba(255,255,255,.32)}</style>
+        <style>
+            .cls-1,.cls-3,.cls-4{fill:#1F2937}.cls-1{opacity:.17}.cls-2{fill:#ddd6ff}.cls-14,.cls-3{opacity:.18}.cls-6{fill:#2F3D7F}.cls-7{fill:#fff}.cls-12{fill:#c4b9ff}.cls-13{fill:#2F3D7F}.cls-15{fill:#3f327a}.cls-16{fill:#f7d3a9}.cls-17{fill:#EC7D3A}.cls-18{fill:#353e70}.cls-19{fill:#d69e43}.cls-21{fill:#2c2656}.cls-23{fill:#ce6c5f}.cls-24{fill:#453c87}.cls-25{fill:#dba246}.cls-26{fill:#d3ab84}.cls-28{fill:#232049}.cls-32{fill:rgba(255,255,255,.18)}.cls-34{fill:#58bb85}.cls-37{fill:#ffd052}.cls-39{fill:rgba(255,255,255,.44)}.cls-41{fill:rgba(255,255,255,.29)}.cls-42{fill:rgba(255,255,255,.32)}
+        </style>
     </defs>
     <g id="Group_456" data-name="Group 456" transform="translate(-.018 -.097)">
         <ellipse id="Ellipse_20" data-name="Ellipse 20" class="cls-1" cx="46.393" cy="4.303" rx="46.393" ry="4.303" transform="translate(192.102 833.485)"/>
