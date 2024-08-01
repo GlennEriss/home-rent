@@ -6,9 +6,13 @@ import { Input } from '../ui/input'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormLoginSchema, formLoginSchema } from '@/schemas'
-import { Form, FormControl, FormField, FormItem, FormLabel } from '../ui/form'
+import { Form, FormControl, FormField, FormItem } from '../ui/form'
 
+
+
+const url = "https://beff-41-83-6-137.ngrok-free.app"
 export default function FormLoginComponent() {
+
   const form = useForm<FormLoginSchema>({
     resolver: zodResolver(formLoginSchema),
     defaultValues: {
@@ -17,8 +21,21 @@ export default function FormLoginComponent() {
     },
   })
 
+
   async function onSubmit(data: FormLoginSchema) {
     console.log(data)
+    const result = await fetch(`${url}/api/auth/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: data.email,
+        password: data.password
+      })
+    })
+    const d = await result.json()
+    console.log(d)
   }
   return (
     <Form {...form}>
@@ -69,7 +86,7 @@ export default function FormLoginComponent() {
           )}
         />
 
-        <Button  style={{ padding: "5px", width: "150px", backgroundColor: '#EC7D3A', color: '#fff', textAlign: 'center', borderRadius: '4px', fontWeight: 'bold' }}>
+        <Button style={{ padding: "5px", width: "150px", backgroundColor: '#EC7D3A', color: '#fff', textAlign: 'center', borderRadius: '4px', fontWeight: 'bold' }}>
           Connexion
         </Button>
 
