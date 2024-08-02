@@ -7,7 +7,7 @@ const sora = Sora({
 })
 export default function LogoText() {
   return (
-    <div className={cn('text-xl', sora.className)}>
+    <div className={cn('text-xl text-[#2f3d7f]', sora.className)}>
         HOME-FINDER
     </div>
   )
