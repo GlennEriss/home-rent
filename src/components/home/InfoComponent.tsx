@@ -11,7 +11,7 @@ export default function InfoComponent() {
       <div className="rounded-b-xl p-5 py-10 relative 
     xl:rounded-xl md:h-[400px] xl:h-[500px]">
         <div className="absolute inset-0 bg-black bg-opacity-50 rounded-b-xl "></div>
-        <div className="z-10 relative">
+        <div className="z-30 relative">
           <div className="flex space-x-1 justify-center items-center">
             <span className='text-white xl:text-4xl'>
               {t('welcome')}
@@ -24,8 +24,8 @@ export default function InfoComponent() {
             {t('description')}
           </p>
           <div className="mt-4 flex justify-center items-center gap-2">
-            <Link href='' className='bg-orange-400 px-4 py-2 rounded-lg text-white'> {t('catalog')} </Link>
-            <Link href='' className='px-1 text-nowrap md:px-4 py-2 rounded-lg text-white border-2 border-white'> {t('create')} </Link>
+            <Link href='' className='z-100 bg-orange-400 px-4 py-2 rounded-lg text-white'> {t('catalog')} </Link>
+            <Link href='/annonce/create' className='z-50 px-1 text-nowrap md:px-4 py-2 rounded-lg text-white border-2 border-white'> {t('create')} </Link>
           </div>
         </div>
       </div>

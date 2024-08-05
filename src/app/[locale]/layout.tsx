@@ -10,6 +10,8 @@ import ApartmentProvider from '@/providers/ApartmentProviders'
 import HouseProvider from '@/providers/HouseProvider'
 import StudioProvider from '@/providers/StudioProvider'
 import LandProvider from '@/providers/LandProvider'
+import Navbar from '@/components/navbar/Navbar'
+import Footer from '@/components/footer/Footer'
 
 const sora = Sora({
   subsets: ['latin'],
@@ -34,7 +36,11 @@ export default async function LocaleLayout({
                 <HouseProvider>
                   <StudioProvider>
                     <LandProvider>
-                      {children}
+                      <Navbar />
+                      <div>
+                        {children}
+                      </div>
+                      <Footer />
                     </LandProvider>
                   </StudioProvider>
                 </HouseProvider>

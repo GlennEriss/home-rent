@@ -55,7 +55,7 @@ export default function CardStudioItem({ studio }: { studio: any }) {
                     <p>
                         {t('price', { value: studio.rate })}
                     </p>
-                    <Link href='' className='ml-auto mr-1 py-2 px-4 bg-orange-400 rounded-lg text-white'>
+                    <Link href={`/studio/${studio.id}`} className='ml-auto mr-1 py-2 px-4 bg-orange-400 rounded-lg text-white'>
                         <AiOutlineEye size={25} />
                     </Link>
                     {/* <Button className='bg-red-500'>

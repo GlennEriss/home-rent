@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { formStudioSchema, FormStudioSchema } from '@/schemas';
 import { useRouter } from '@/navigation'
 import SuggestOwner from '../profil/SuggestOwner';
+import { useCookies } from 'react-cookie'
 
 export default function FormStudio() {
     const form = useForm<FormStudioSchema>({
@@ -35,6 +36,7 @@ export default function FormStudio() {
     const queryClient = useQueryClient()
     const { toast } = useToast()
     const router = useRouter()
+    const [cookies] = useCookies(['token'])
     const mutation = useMutation({
         mutationKey: ['studios'],
         mutationFn: async (data: any) => {
@@ -43,6 +45,7 @@ export default function FormStudio() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${cookies.token}`
                 },
                 body: JSON.stringify(data),
             });
@@ -84,6 +87,9 @@ export default function FormStudio() {
         //Upload main image
         let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
             method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${cookies.token}`
+            },
             body: formData,
         });
 
@@ -102,6 +108,9 @@ export default function FormStudio() {
             formData.append('file', file);
             response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
                 method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${cookies.token}`
+                },
                 body: formData,
             });
             if (!response.ok) {

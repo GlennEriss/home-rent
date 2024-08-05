@@ -1,12 +1,15 @@
+import { boolean } from "zod";
+
 export const MenuNavbar = [
-    {
+    /* {
         title: 'Se connecter',
         link: ''
-    },
+    },*/
     {
-        title: 'S\'inscrire',
-        link: ''
-    },
+        title: 'Profil',
+        link: '/profil',
+        isConnect: true
+    }, 
     {
         title: 'Catalogues',
         link: ''
@@ -18,5 +21,5 @@ export const MenuNavbar = [
     {
         title: 'À propos',
         link: ''
-    }
+    },
 ]

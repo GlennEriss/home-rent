@@ -12,6 +12,7 @@ import { Input } from '../ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import SuggestOwner from '../profil/SuggestOwner';
 import { useRouter } from '@/navigation'
+import { useCookies } from 'react-cookie'
 
 export default function FormHouse() {
     const form = useForm<FormHouseSchema>({
@@ -34,6 +35,7 @@ export default function FormHouse() {
     })
     const queryClient = useQueryClient()
     const { toast } = useToast()
+    const [cookies] = useCookies(['token'])
     const router = useRouter()
     const mutation = useMutation({
         mutationKey: ['houses'],
@@ -43,6 +45,8 @@ export default function FormHouse() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${cookies.token}`
+
                 },
                 body: JSON.stringify(data),
             });
@@ -84,6 +88,9 @@ export default function FormHouse() {
         //Upload main image
         let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
             method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${cookies.token}`
+            },
             body: formData,
         });
 
@@ -102,6 +109,9 @@ export default function FormHouse() {
             formData.append('file', file);
             response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
                 method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${cookies.token}`
+                },
                 body: formData,
             });
             if (!response.ok) {

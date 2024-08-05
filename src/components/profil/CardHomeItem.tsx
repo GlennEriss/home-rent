@@ -55,7 +55,7 @@ export default function CardHomeItem({ house }: { house: any }) {
           <p>
             {t('price', { value: house.rate })}
           </p>
-          <Link href='' className='ml-auto py-2 px-4 bg-orange-400 rounded-lg text-white'>
+          <Link href={`/house/${house.id}`} className='ml-auto py-2 px-4 bg-orange-400 rounded-lg text-white'>
             <AiOutlineEye size={25} />
           </Link>
           {/* <Button className='bg-red-500'>

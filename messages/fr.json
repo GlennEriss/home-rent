@@ -28,8 +28,9 @@
         "desk": "Bureau",
         "ground": "Terrain",
         "bedroom": "Chambres",
-        "province": "Sélectionner une province",
-        "city": "Sélectionner une ville"
+        "province": "Sélectionner une région",
+        "city": "Sélectionner une ville",
+        "land": "Terrain"
     },
     "PropertyTypes": {
         "title": "Explorez les types d'appartement",

@@ -11,7 +11,7 @@ import { useToast } from '../ui/use-toast';
 import { Input } from '../ui/input';
 import { useRouter } from '@/navigation';
 import SuggestOwner from '../profil/SuggestOwner';
-
+import { useCookies } from 'react-cookie'
 
 export default function FormLand() {
     const form = useForm<FormLandSchema>({
@@ -28,6 +28,7 @@ export default function FormLand() {
     })
     const queryClient = useQueryClient()
     const { toast } = useToast()
+    const [cookies] = useCookies(['token'])
     const router = useRouter()
     const mutation = useMutation({
         mutationKey: ['lands'],
@@ -37,6 +38,7 @@ export default function FormLand() {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${cookies.token}`
                 },
                 body: JSON.stringify(data),
             });
@@ -78,6 +80,9 @@ export default function FormLand() {
         //Upload main image
         let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
             method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${cookies.token}`
+            },
             body: formData,
         });
 
@@ -96,6 +101,9 @@ export default function FormLand() {
             formData.append('file', file);
             response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
                 method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${cookies.token}`
+                },
                 body: formData,
             });
             if (!response.ok) {

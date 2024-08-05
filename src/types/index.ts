@@ -10,7 +10,7 @@ export type Owner = CreationType & {
     searchableName?: string
 }
 
-export type Property = {
+export type Property = CreationType & {
     description: string,
     area: number,
     location: string,
@@ -21,6 +21,7 @@ export type Property = {
     status: string,
     images: string[],
     owner: Owner,
+    ownerId?: number,
 }
 export type Land = Property & {
     landType: string
@@ -31,14 +32,14 @@ export type Accomodation = Property & {
     numberOfKitchens: number,
     numberOfToilets: number,
 }
-export type Apartment = CreationType & Accomodation & {
+export type Apartment = Accomodation & {
     apartmentNumber: string
 }
 
-export type House = CreationType & Accomodation & {
+export type House =  Accomodation & {
     numberOfFloors: number
 }
 
-export type Studio = CreationType & Accomodation & {
+export type Studio = Accomodation & {
     studioNumber: string
 }

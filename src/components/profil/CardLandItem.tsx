@@ -40,7 +40,7 @@ export default function CardLandItem({ land }: { land: any }) {
                     <p>
                         {t('price', { value: land.rate })}
                     </p>
-                    <Link href='' className='ml-auto mr-1 py-2 px-4 bg-orange-400 rounded-lg text-white'>
+                    <Link href={`/land/${land.id}`} className='ml-auto mr-1 py-2 px-4 bg-orange-400 rounded-lg text-white'>
                         <AiOutlineEye size={25} />
                     </Link>
                     {/* <Button className='bg-red-500'>

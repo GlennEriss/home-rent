@@ -7,24 +7,39 @@ import { Button } from '../ui/button'
 const filters = [
   {
     type: 'status',
-    value: ['sell', 'rent'],
+    value: ['A louer', 'A vendre'],
     placeholder: 'sellOrRent'
   },
   {
     type: 'type',
-    value: ['studio', 'house', 'appartment', 'building', 'villa', 'local', 'desk', 'ground', 'bedroom'],
+    value: ['Studio', 'Maison', 'Appartment', 'Terrain'],
     placeholder: 'type'
   },
   {
     type: 'province',
-    value: ['studio', 'house', 'appartment', 'building', 'villa', 'local', 'desk', 'ground', 'bedroom'],
+    value: [
+      "DAKAR",
+      "DIOURBEL",
+      "FATICK",
+      "KAFFRINE",
+      "KAOLACK",
+      "KEDOUGOU",
+      "KOLDA",
+      "LOUGA",
+      "MATAM",
+      "SAINT-LOUIS",
+      "SEDHIOU",
+      "TAMBACOUNDA",
+      "THIES",
+      "ZIGUINCHOR"
+    ],
     placeholder: 'province'
   },
-  {
+  /* {
     type: 'city',
     value: ['studio', 'house', 'appartment', 'building', 'villa', 'local', 'desk', 'ground', 'bedroom'],
     placeholder: 'city'
-  }
+  } */
 ]
 export default function SearchProperty() {
   const t = useTranslations('SearchProperty')
@@ -32,7 +47,7 @@ export default function SearchProperty() {
     <div className="m-5 grid grid-cols-1 gap-4 rounded-xl p-5 py-10 lg:py-7 border bg-[#F6F8FF]">
       <h1 className='font-bold mx-auto text-[#2F3D7F] text-xl'> {t('title')} </h1>
       <div className='flex flex-col lg:flex-row gap-3'>
-        <div className='grid md:grid-cols-2 gap-3 lg:grid-cols-4 flex-grow'>
+        <div className='grid md:grid-cols-2 gap-3 lg:grid-cols-3 flex-grow'>
           {
             filters.map((item, key) =>
               <Select key={key}>
@@ -43,7 +58,7 @@ export default function SearchProperty() {
                   {
                     item.value.map((value, key) =>
                       <SelectItem key={key} value={value}>
-                        {t(value)}
+                        {value}
                       </SelectItem>
                     )
                   }

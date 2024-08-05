@@ -12,6 +12,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useToast } from '../ui/use-toast'
 import SuggestOwner from '../profil/SuggestOwner'
 import { useRouter } from '@/navigation'
+import { useCookies } from 'react-cookie'
 //import { DevTool } from "@hookform/devtools";
 
 export default function FormApartment() {
@@ -33,6 +34,7 @@ export default function FormApartment() {
       owner: undefined
     },
   })
+  const [cookies] = useCookies(['token'])
   const queryClient = useQueryClient()
   const { toast } = useToast()
   const router = useRouter()
@@ -44,6 +46,7 @@ export default function FormApartment() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${cookies.token}`
         },
         body: JSON.stringify(data),
       });
@@ -85,6 +88,9 @@ export default function FormApartment() {
     //Upload main image
     let response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
       method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${cookies.token}`
+      },
       body: formData,
     });
 
@@ -103,6 +109,9 @@ export default function FormApartment() {
       formData.append('file', file);
       response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/images/upload`, {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${cookies.token}`
+        },
         body: formData,
       });
       if (!response.ok) {

@@ -4,14 +4,77 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineHome } from 'react-icons/ai'
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from '../ui/carousel'
 import { cn } from '@/lib/utils'
-import { PropertyTypesList } from './data'
 import Autoplay from "embla-carousel-autoplay"
-
+import { Button } from '../ui/button'
+import { useHouseContext } from '@/providers/HouseProvider'
+import { useApartmentContext } from '@/providers/ApartmentProviders'
+import { useLandContext } from '@/providers/LandProvider'
+import { useStudioContext } from '@/providers/StudioProvider'
 
 export default function PropertyTypes() {
   const t = useTranslations('PropertyTypes')
   const [api, setApi] = useState<CarouselApi>()
   const [currentSlide, setCurrentSlide] = useState(0)
+  const { houses } = useHouseContext()
+  const { apartments } = useApartmentContext()
+  const { lands } = useLandContext()
+  const { studios } = useStudioContext()
+  
+  const [propertyTypesList, setPropertyTypesList] = useState([
+    {
+      title: 'home',
+      link: '',
+      icon: '',
+      length: 0
+    },
+    {
+      title: 'apartment',
+      link: '',
+      icon: '',
+      length: 0
+    },
+    {
+      title: 'land',
+      link: '',
+      icon: '',
+      length: 0
+    },
+    {
+      title: 'studio',
+      link: '',
+      icon: '',
+      length: 0
+    },
+  ])
+
+  useEffect(() => {
+    setPropertyTypesList([
+      {
+        title: 'home',
+        link: '',
+        icon: '',
+        length: houses?.length || 0
+      },
+      {
+        title: 'apartment',
+        link: '',
+        icon: '',
+        length: apartments?.length || 0
+      },
+      {
+        title: 'land',
+        link: '',
+        icon: '',
+        length: lands?.length || 0
+      },
+      {
+        title: 'studio',
+        link: '',
+        icon: '',
+        length: studios?.length || 0
+      },
+    ])
+  }, [houses, apartments, lands, studios])
 
   useEffect(() => {
     if (!api) {
@@ -34,14 +97,16 @@ export default function PropertyTypes() {
       ]}>
         <CarouselContent >
           {
-            PropertyTypesList.map((item, index) =>
+            propertyTypesList.map((item, index) =>
               <CarouselItem key={index} className='md:basis-1/3 xl:basis-1/4'>
-                <div className="rounded-xl flex flex-col gap-2 justify-center items-center mt-5 p-10 bg-[#F6F8FF]">
-                  <span className='rounded-full bg-[#2F3D7E] p-5'>
-                    <AiOutlineHome size={50} color='white' />
-                  </span>
-                  <span className='font-bold text-xl'>{t(item.title)}</span>
-                  <span className='text-gray-500'>{t('property', { number: 22 })}</span>
+                <div >
+                  <Button variant='ghost' className="rounded-xl flex flex-col gap-2 justify-center items-center mt-5 p-10 bg-[#F6F8FF] w-full h-full">
+                    <span className='rounded-full bg-[#2F3D7E] p-5'>
+                      <AiOutlineHome size={50} color='white' />
+                    </span>
+                    <span className='font-bold text-xl'>{t(item.title)}</span>
+                    <span className='text-gray-500'>{t('property', { number: item.length })}</span>
+                  </Button>
                 </div>
               </CarouselItem>
             )
@@ -54,6 +119,6 @@ export default function PropertyTypes() {
           ))}
         </div>
       </Carousel>
-    </div>
+    </div >
   )
 }
